@@ -1,0 +1,12 @@
+Crypt::Rot13, version 0.01,                   Wed May  5 12:31:01 UTC 1999
+  julian fondren, julian@imaji.net
+
+This is fairly standard.
+
+  perl Makefile.PL
+  make
+  make test (all tests should succeed)
+  make install
+  perldoc Crypt::Rot13
+
+Have fun.
