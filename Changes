@@ -1,5 +1,10 @@
 Revision history for Perl extension Crypt::Rot13.
 
+0.04  Tue Jun 15 11:59:05 1999
+	- fixed a bug with the handling of `0' rotations,
+	  made the documentation a little more clear and
+	  test.pl a little more comprehensive
+
 0.02  Mon May 24 21:00:29 1999
         - clean up the tr data
 

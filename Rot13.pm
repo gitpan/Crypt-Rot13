@@ -1,10 +1,10 @@
 ## -*- Cperl -*-
 package Crypt::Rot13;
-$VERSION = '0.02';
+$VERSION = '0.04';
 use strict;
 use Carp;
 
-###############################################################################
+#------------------------------------------------------------------------------
 ## Copyright (C) 1999 julian fondren
 
 ## This program is free software; you can redistribute it and/or
@@ -21,7 +21,7 @@ use Carp;
 ## License along with this program; if not, write to the Free
 ## Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 ## MA 02111-1307 USA
-###############################################################################
+#------------------------------------------------------------------------------
 
 sub new {
   my $proto = shift;
@@ -43,8 +43,9 @@ sub charge {
 
 sub rot13 {
   my $self = shift;
-  my $degree = shift || 13;         # how much to rotate?
-  croak "Invalid rotation" if ($degree > 26 or $degree < 0);
+  my $degree = shift;
+  $degree = 13 unless defined $degree;
+  croak "Invalid rotation: $degree" if ($degree > 26 or $degree < 0);
   my @rots = ( "a-z", "b-za", "c-zab", "d-za-c", "e-za-d", "f-za-e",
 	       "g-za-f", "h-za-g", "i-za-h", "j-za-i", "k-za-j", "l-za-k",
 	       "m-za-l", "n-za-m", "o-za-n", "p-za-o", "q-za-p", "r-za-q",
@@ -96,6 +97,8 @@ Crypt::Rot13 has the following methods.
 
 standard constructor, this creates an array object, which is most
 convienent for mass text deviation.
+(For clarification, the object *is* an array; not a hash as most are.
+This is better suited to mass rotations.)
 
 =item charge
 
@@ -112,6 +115,25 @@ rotates alphabetical characters of array object degree times toward the
 Unreachable Wrapping Z, or 13 times if degree is omitted.
 
 =back
+
+=head1 LICENSE
+
+Copyright (C) 1999 julian fondren
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of
+the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public
+License along with this program; if not, write to the Free
+Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+MA 02111-1307 USA
 
 =head1 AUTHOR
 

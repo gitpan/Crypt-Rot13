@@ -1,4 +1,4 @@
-Crypt::Rot13, version 0.02,                   Mon May, 24 1999
+Crypt::Rot13, version 0.04,                   Tue Jun 15 11:59:05 1999
   julian fondren, julian@imaji.net
 
   perl Makefile.PL
