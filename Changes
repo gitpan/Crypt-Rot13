@@ -1,12 +1,32 @@
 Revision history for Perl extension Crypt::Rot13.
 
+v0.6  Thu Apr 20 23:25:17 2000
+        - worked over the documentation again.  It's very good now.
+        - made some minor changes to code appearance.
+        - made test.pl more sophisticated.
+        - changed the version numbering scheme.
+
+0.05  Wed Apr 19 15:48:03 2000
+        - made the documentation a little more sophisticated.
+        - ditto w.r.t. the rot13 () method.  It's using an algorithm
+          I discovered while implementing rot13 in scheme a while
+          back, which is probably why it looks so strange.
+        - made test.pl a little more comprehensive, something not done
+          in the 0.04 version.
+        - added 'rot13.perl', a program which demonstrates
+          pretty much the entire use of Crypt::Rot13.
+        - optimized rot13 () on rotations equal or effectively equal
+          to '13'.
+
 0.04  Tue Jun 15 11:59:05 1999
 	- fixed a bug with the handling of `0' rotations,
 	  made the documentation a little more clear and
 	  test.pl a little more comprehensive
 
+
 0.02  Mon May 24 21:00:29 1999
         - clean up the tr data
+
 
 0.01  Wed May  5 11:32:17 1999
 	- original version; created by h2xs 1.19

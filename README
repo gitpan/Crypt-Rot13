@@ -1,10 +1,37 @@
-Crypt::Rot13, version 0.04,                   Tue Jun 15 11:59:05 1999
-  julian fondren, julian@imaji.net
+Crypt::Rot13 v0.6                               Thu Apr 20 23:03:00 2000
+  by Julian Fondren
+
+
+#-----------------------------------------------------------------------
+#-- Basic Installation Instructions:
 
   perl Makefile.PL
   make
-  make test (all tests should succeed)
+  make test
   make install
   perldoc Crypt::Rot13
+#-----------------------------------------------------------------------
 
-Have fun.
+
+#-----------------------------------------------------------------------
+#-- Changes for v0.6
+The documentation has improved greatly and the version numbering scheme
+has been changed.
+
+Since 0.05 was never released, it's changes may also be of interest.
+#-----------------------------------------------------------------------
+
+
+#-----------------------------------------------------------------------
+#-- Changes for 0.05 (unreleased)
+Most CPAN modules are distributed under the same terms as Perl
+itself.  Crypt::Rot13 is not.  See the pod for more information.
+
+There are a number of changes between 0.04 and 0.05, the only
+user-visible ones being the changed documentation and a more powerful
+rot13 () method.  Legacy code using Crypt::Rot13 will not need
+changing.  You can now use any sort of degree, from -INF to +INF, if
+Perl can handle it.
+
+The code for the crypt () method has been vastly improved.
+#-----------------------------------------------------------------------

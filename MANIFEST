@@ -1,5 +1,8 @@
+COPYING
 Changes
 MANIFEST
 Makefile.PL
+README
 Rot13.pm
+rot13.perl
 test.pl
