@@ -1,5 +1,8 @@
 Revision history for Perl extension Crypt::Rot13.
 
+0.02  Mon May 24 21:00:29 1999
+        - clean up the tr data
+
 0.01  Wed May  5 11:32:17 1999
 	- original version; created by h2xs 1.19
 	  Workable, the interface will not change.

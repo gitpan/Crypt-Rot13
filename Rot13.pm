@@ -1,6 +1,6 @@
 ## -*- Cperl -*-
 package Crypt::Rot13;
-$VERSION = '0.01';
+$VERSION = '0.02';
 use strict;
 use Carp;
 
@@ -22,20 +22,6 @@ use Carp;
 ## Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
 ## MA 02111-1307 USA
 ###############################################################################
-
-##
-# The current rot13 method will be *drastically* changed in the future, my
-# original intention was to just release Crypt::Rot13 and promise a feature
-# of multiple rotations in the next. This way the module can be used in
-# exactly the same way (much better, OO wise) right now is in the next
-# release without care to the fact that the rotational bits are a tad silly.
-
-# and also, striving for a WORKABLE version of something before you start
-# on a warpath of optimization and the "best way" that so many newbies seem
-# to want to jump immediately to is a recent rant of mine. This module is
-# not likely to go through many versions -- I may as well give it a few!
-##
-
 
 sub new {
   my $proto = shift;
@@ -59,20 +45,11 @@ sub rot13 {
   my $self = shift;
   my $degree = shift || 13;         # how much to rotate?
   croak "Invalid rotation" if ($degree > 26 or $degree < 0);
-  my @rots = ( "a-z", "bcdefghijklmnopqrstuvwxyza",
-	       "cdefghijklmnopqrstuvwxyzab", "defghijklmnopqrstuvwxyzabc",
-	       "efghijklmnopqrstuvwxyzabcd", "fghijklmnopqrstuvwxyzabcde",
-	       "ghijklmnopqrstuvwxyzabcdef", "hijklmnopqrstuvwxyzabcdefg",
-	       "ijklmnopqrstuvwxyzabcdefgh", "jklmnopqrstuvwxyzabcdefghi",
-	       "klmnopqrstuvwxyzabcdefghij", "lmnopqrstuvwxyzabcdefghijk",
-	       "mnopqrstuvwxyzabcdefghijkl", "n-za-m",
-	       "opqrstuvwxyzabcdefghijklmn", "pqrstuvwxyzabcdefghijklmno",
-	       "qrstuvwxyzabcdefghijklmnop", "rstuvwxyzabcdefghijklmnopq",
-	       "stuvwxyzabcdefghijklmnopqr", "tuvwxyzabcdefghijklmnopqrs",
-	       "uvwxyzabcdefghijklmnopqrst", "vwxyzabcdefghijklmnopqrstu",
-	       "wxyzabcdefghijklmnopqrstuv", "xyzabcdefghijklmnopqrstuvw",
-	       "yzabcdefghijklmnopqrstuvwx", "zabcdefghijklmnopqrstuvwxy",
-	       "a-z");
+  my @rots = ( "a-z", "b-za", "c-zab", "d-za-c", "e-za-d", "f-za-e",
+	       "g-za-f", "h-za-g", "i-za-h", "j-za-i", "k-za-j", "l-za-k",
+	       "m-za-l", "n-za-m", "o-za-n", "p-za-o", "q-za-p", "r-za-q",
+	       "s-za-r", "t-za-s", "u-za-t", "v-za-u", "w-za-v", "x-za-w",
+	       "yza-x", "za-y", "a-z");
   my @rot13;
   foreach ($self->peek()) {
     eval "y/a-zA-Z/@{[$rots[$degree] . uc($rots[$degree])]}/";
